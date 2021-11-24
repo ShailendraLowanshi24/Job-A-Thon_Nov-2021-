@@ -19,10 +19,10 @@ First step in Building a Model is to understand the Data-Set, and after understa
 The Next step is that the target variable is not specifically mentioned in the train data. For constructing the target variable as shown in the definition, one should first look at the ‘LastWorkingDate’ column. Wherever the column has null values, that means the employee is continuing his/her work at the organization at least in the next year. Wherever any date record is appearing, that means the employee has left the organization on that particular date. So as per definition, we will put 0 where ‘LastWorkingDate’ column is null and 1 where ‘LastWorkingDate’ column has a date. 
 Next, we take the age of that employee the last it was reported. Gender and City were taken from the dataset given. Education and Salary were also taken the last time it was reported. Joining Designation is taken as it is from the dataset. Designation is the designation of the employee at the last time it was reported. Total Business Value is the sum of the Total Business Value acquired by the employee. Quarterly_Rating is the rating the employee was given the last time it was reported.
 
-**Model Building: **
+****Model Building:****
 
 Now, before building the model, the categorical feature ‘Gender’, ‘Education-Level’, ‘City’, ‘Quarterly Rating’ was One-hot encoded. All the numerical features were scaled using StandardScalar. Then search for the parameter values like ‘n-estimators’ and ‘max-depth’ which gives the best f1-score using GridSearchCV.
 
-**Model Selection: **
+**Model Selection:**
 
 Before finalizing on Decision Tree; few classification models like LogisticRegression, KNN, SVM, XGBoost and GradientBoost were also applied on the dataset. XGBoost led to overfitting the data. SVM, Gradient Boost and Random Forest performed well on the data. Since Decision Tree gave a good f1-score = 0.6966, this model was selected to predict the employee attrition.
