@@ -13,10 +13,11 @@ As the objective was to predict if an employee will leave the organization in th
 
 **Data Pre-Processing/Feature Engineering:** **
 
+In the dataset, there are 13 features which are Emp_ID,Reporting Date,Age,Gender,City,Education,Salary,DateofJoining,LastWorkingDate,Joining_Designation, Designation, Total_Business_Value, Quarterly_Rating.
 
-In the dataset, there are 13 features which are Emp_ID, Reporting Date, Age,Gender,City,Education,Salary,DateofJoining,LastWorkingDate,Joining_Designation, Designation, Total_Business_Value, Quarterly_Rating. 
 First step in Building a Model is to understand the Data-Set, and after understanding I came to know that, there are ‘2200’ Duplicate values present in the ‘Emp_ID’ column (primary key). After that I’d Drop all the Duplicate values on the basis of last ‘Reporting Date’, and we get the Distinct ‘Emp_ID’ column. 
-The Next step is that the target variable is not specifically mentioned in the train data. For constructing the target variable as shown in the definition, one should first look at the ‘LastWorkingDate’ column. Wherever the column has null values, that means the employee is continuing his/her work at the organization at least in the next year. Wherever any date record is appearing, that means the employee has left the organization on that particular date. So as per definition, we will put 0 where ‘LastWorkingDate’ column is null and 1 where ‘LastWorkingDate’ column has a date. 
+The Next step is that the target variable is not specifically mentioned in the train data. For constructing the target variable as shown in the definition, one should first look at the ‘LastWorkingDate’ column. Wherever the column has null values, that means the employee is continuing his/her work at the organization at least in the next year. Wherever any date record is appearing, that means the employee has left the organization on that particular date. So as per definition, we will put 0 where ‘LastWorkingDate’ column is null and 1 where ‘LastWorkingDate’ column has a date.
+
 Next, we take the age of that employee the last it was reported. Gender and City were taken from the dataset given. Education and Salary were also taken the last time it was reported. Joining Designation is taken as it is from the dataset. Designation is the designation of the employee at the last time it was reported. Total Business Value is the sum of the Total Business Value acquired by the employee. Quarterly_Rating is the rating the employee was given the last time it was reported.
 
 ****Model Building:****
